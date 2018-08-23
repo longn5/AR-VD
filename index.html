@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--needed for Aframe framework  -->
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <!--needed for AR.js for Aframe -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body>
+    <a-scene embedded arjs="sourceType: webcam;">
+        <a-marker preset="hiro">
+            <a-image src="assets/scream.jpg" position="0 0 0" rotation="-90 0 0 " width="4" height="4"></a-image>
+        </a-marker>
+        <a-marker type='pattern' url='marker/letter-L-blue.patt'> 
+            <a-entity obj-model="obj : url(assets/typewriter.obj); mtl: url(assets/typewriter.mtl)" position="0 0 0" scale="1 1 1" rotation="0 180 0"></a-entity>
+        </a-marker>
+        <a-marker type='pattern' url='marker/letter-L-red.patt'>
+            <a-entity obj-model="obj : url(assets/books.obj); mtl: url(assets/books.mtl)" position="0 0 0" scale="1 1 1"></a-entity>
+        </a-marker>
+        <a-marker type='custom' url='marker/mona-lisa.patt'>
+            <a-image src="assets/minion.jpg" position="0 0 0" rotation="-90 0 0 " width="4" height="4"></a-image>
+        </a-marker>
+        <!-- camera object -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
